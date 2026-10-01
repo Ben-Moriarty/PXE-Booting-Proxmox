@@ -11,7 +11,7 @@ For this setup I used:
 
 - **HP Envy x360 laptop (Debian 13.7)** - PXE server, DHCP proxy, TFTP server, and HTTP server
 
-- **HP EliteDesk desktop** - PXE client
+- **HP EliteDesk 800 desktop** - PXE client
 
 ## Configuration
 
@@ -37,9 +37,9 @@ Now, we will install iPXE the nifty "boot firmware"
 
 `sudo apt install ipxe`
 
-Move the PXE binary to your tftp folder
+Copy the PXE binary to your tftp folder
 
-`sudo mv /usr/lib/ipxe/ipxe.efi ./tftp`
+`sudo cp /usr/lib/ipxe/ipxe.efi ./tftp`
 
 
 
