@@ -31,7 +31,7 @@ In order to do this the proxmox package repository must be made known to apt (do
 
 Create a new file: 
 
-`/etc/apt/sources.list.d/proxmox.sources`
+`sudo touch /etc/apt/sources.list.d/proxmox.sources`
 
 And paste:
 ```
