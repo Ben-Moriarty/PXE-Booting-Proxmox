@@ -25,6 +25,22 @@ That will be all the configuration you need for the client, just make sure it ha
 #### Server
 While writing this, I did a fresh install of Debian 13.7 on my laptop, but this setup likely works for any Debian-based distribution.
 
+First, we are going to install the 'proxmox-auto-install-assistant'
+
+In order to do this the proxmox package repository must be made known to apt (documentation: https://pve.proxmox.com/wiki/Package_Repositories)
+
+Create a new file: 
+
+`/etc/apt/sources.list.d/proxmox.sources
+
+And paste:
+
+`Types: deb
+`URIs: http://download.proxmox.com/debian/pve
+`Suites: trixie
+`Components: pve-no-subscription
+`Signed-By: /usr/share/keyrings/proxmox-archive-keyring.gpg
+
 Let's start with making the root directory for this project (I made mine in my home directory)
 
 `mkdir proxmox-pxe-boot`
