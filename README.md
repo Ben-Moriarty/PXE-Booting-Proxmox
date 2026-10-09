@@ -25,7 +25,7 @@ That will be all the configuration you need for the client, just make sure it ha
 ### Server
 While writing this, I did a fresh install of Debian 13.7 on my laptop, but this setup likely works for any Debian-based distribution.
 
-#### Proxmox Tool Setup
+### Proxmox Tool Setup
 First, we are going to install the 'proxmox-auto-install-assistant'
 
 In order to do this the proxmox package repository must be made known to apt (documentation: https://pve.proxmox.com/wiki/Package_Repositories)
@@ -47,7 +47,7 @@ You'll also need the proxmox keyring:
 
 `wget https://enterprise.proxmox.com/debian/proxmox-archive-keyring-trixie.gpg -O /usr/share/keyrings/proxmox-archive-keyring.gpg`
 
-#### iPXE Setup
+### iPXE Setup
 Let's start with making the root directory for this project (I made mine in my home directory)
 
 `mkdir proxmox-pxe-boot`
