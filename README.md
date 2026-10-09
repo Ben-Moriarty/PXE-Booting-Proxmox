@@ -31,15 +31,16 @@ In order to do this the proxmox package repository must be made known to apt (do
 
 Create a new file: 
 
-`/etc/apt/sources.list.d/proxmox.sources
+`/etc/apt/sources.list.d/proxmox.sources`
 
 And paste:
-
-`Types: deb
-`URIs: http://download.proxmox.com/debian/pve
-`Suites: trixie
-`Components: pve-no-subscription
-`Signed-By: /usr/share/keyrings/proxmox-archive-keyring.gpg
+```
+Types: deb
+URIs: http://download.proxmox.com/debian/pve
+Suites: trixie
+Components: pve-no-subscription
+Signed-By: /usr/share/keyrings/proxmox-archive-keyring.gpg
+```
 
 Let's start with making the root directory for this project (I made mine in my home directory)
 
