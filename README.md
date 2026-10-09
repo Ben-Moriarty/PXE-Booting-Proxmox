@@ -42,6 +42,10 @@ Components: pve-no-subscription
 Signed-By: /usr/share/keyrings/proxmox-archive-keyring.gpg
 ```
 
+You'll also need the proxmox keyring:
+
+`wget https://enterprise.proxmox.com/debian/proxmox-archive-keyring-trixie.gpg -O /usr/share/keyrings/proxmox-archive-keyring.gpg`
+
 Let's start with making the root directory for this project (I made mine in my home directory)
 
 `mkdir proxmox-pxe-boot`
