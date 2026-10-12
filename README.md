@@ -48,7 +48,7 @@ You'll also need the proxmox keyring:
 `wget https://enterprise.proxmox.com/debian/proxmox-archive-keyring-trixie.gpg -O /usr/share/keyrings/proxmox-archive-keyring.gpg`
 
 Finally, you can install the tool:
-`sudo apt install proxmox-auto-install-assistant
+`sudo apt install proxmox-auto-install-assistant`
 
 ### Directory Setup
 
