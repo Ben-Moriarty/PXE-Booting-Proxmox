@@ -47,7 +47,8 @@ You'll also need the proxmox keyring:
 
 `wget https://enterprise.proxmox.com/debian/proxmox-archive-keyring-trixie.gpg -O /usr/share/keyrings/proxmox-archive-keyring.gpg`
 
-### iPXE Setup
+### Directory Setup
+
 Let's start with making the root directory for this project (I made mine in my home directory)
 
 `mkdir proxmox-pxe-boot`
@@ -56,6 +57,12 @@ Now let's make the directories we'll be serving files from
 
 `cd proxmox-pxe-boot && mkdir tftp http`
 
+### Prepping ISO
+
+Download the [Proxmox ISO for your machine](https://www.proxmox.com/en/downloads/proxmox-virtual-environment/iso)
+
+### iPXE Setup
+
 Now, we will install iPXE the nifty "boot firmware"
 
 `sudo apt install ipxe`
@@ -63,7 +70,3 @@ Now, we will install iPXE the nifty "boot firmware"
 Copy the PXE binary to your tftp folder
 
 `sudo cp /usr/lib/ipxe/ipxe.efi ./tftp`
-
-
-
-
