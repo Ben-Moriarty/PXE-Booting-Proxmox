@@ -73,3 +73,24 @@ Now, we will install iPXE the nifty "boot firmware"
 Copy the PXE binary to your tftp folder
 
 `sudo cp /usr/lib/ipxe/ipxe.efi ./tftp`
+
+### Caddy setup
+
+I'm using caddy as my http server. Nginx is another popular option, but caddy is easier to setup.
+
+Install caddy:
+`sudo apt install caddy`
+
+Then create your caddyfile in /etc/caddy/Caddyfile
+```
+:8000 {
+  log {
+    output file /var/log/caddy/caddy.log
+  }
+  root * "/home/yourusername/proxmox-pxe-boot/http/"
+  file_server browse
+}
+```
+Now reload caddy with the new configuration
+
+`sudo systemctl reload caddy`
