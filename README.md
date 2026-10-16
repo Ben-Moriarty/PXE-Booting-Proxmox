@@ -64,6 +64,16 @@ Now let's make the directories we'll be serving files from
 
 Download the [Proxmox ISO for your machine](https://www.proxmox.com/en/downloads/proxmox-virtual-environment/iso)
 
+run the following command:
+
+proxmox-auto-install-assistant prepare-iso /path/to/your/iso.iso --fetch-from http --url http://192.168.0.18/answer.tol --pxe --output ./http
+
+you'll have to change the ip address in the url to whatever you are running these commands on
+
+to get your ip run
+
+`ip a`
+
 ### iPXE Setup
 
 Now, we will install iPXE the nifty "boot firmware"
