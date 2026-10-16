@@ -84,6 +84,20 @@ Copy the PXE binary to your tftp folder
 
 `sudo cp /usr/lib/ipxe/ipxe.efi ./tftp`
 
+Now we'll create the configuration file ipxe will use when bootloading
+
+in ./tftp/proxmox.ipxe
+
+```
+#!ipxe
+set base http://192.168.0.18:8000
+kernel ${base}/vmlinuz splash=silent proxmox-start-auto-installer
+initrd ${base}/initrd.img
+initrd ${base}/proxmox-ve_9.2-1-auto-from-http-url.iso proxmox.iso
+boot
+```
+
+
 ### Caddy setup
 
 I'm using caddy as my http server. Nginx is another popular option, but caddy is easier to setup.
