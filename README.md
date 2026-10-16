@@ -104,3 +104,25 @@ Then create your caddyfile in /etc/caddy/Caddyfile
 Now reload caddy with the new configuration
 
 `sudo systemctl reload caddy`
+
+
+### dnsmasq setup
+
+`sudo apt install dnsmasq`
+
+I used the  following config file in /etc/dnsmasq.conf
+
+You'll need to change the ip in dhcp-range if your home network isnt using 192.168.0.0
+
+```
+port=0
+dhcp-range=192.168.0.0,proxy
+pxe-service=tag:!ipxe,x86-64_EFI,"EFI network boot",ipxe.efi
+pxe-service=tag:ipxe,x86-64_EFI,"iPXE",proxmox.ipxe
+dhcp-userclass=set:ipxe,iPXE
+enable-tftp
+tftp-root=/home/yourusername/proxmox-pxe-boot/pxe/tftp
+log-queries
+log-dhcp
+log-facility=/var/log/dnsmasq.log
+```
