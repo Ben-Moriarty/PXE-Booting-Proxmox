@@ -66,13 +66,40 @@ Download the [Proxmox ISO for your machine](https://www.proxmox.com/en/downloads
 
 run the following command:
 
-proxmox-auto-install-assistant prepare-iso /path/to/your/iso.iso --fetch-from http --url http://192.168.0.18/answer.tol --pxe --output ./http
+proxmox-auto-install-assistant prepare-iso /path/to/your/iso.iso --fetch-from http --url http://192.168.0.18/answer.toml --pxe --output ./http
 
 you'll have to change the ip address in the url to whatever you are running these commands on
 
 to get your ip run
 
 `ip a`
+
+Now lets create the proxmox answer file
+
+In ./http/answer.toml
+
+```
+[global]
+keyboard = "en-us"
+country = "us"
+fqdn = "first.last"
+mailto = "mail@no.invalid"
+timezone = "America/Phoenix"
+root-password = "password"
+
+[network]
+source = "from-dhcp"
+
+[network.interface-name-pinning]
+enabled = true
+
+[disk-setup]
+filesystem = "zfs"
+zfs.raid = "raid0"
+disk-list = ["sda"]
+```
+
+I have multiple disks, but apparently its easier to configure a single disk in the answer file. However, there is support for multiple disks on setup.
 
 ### iPXE Setup
 
